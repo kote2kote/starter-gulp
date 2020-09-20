@@ -1,0 +1,8 @@
+@function rem($value: 16) {
+  @return $value/$i-font-size-default + rem;
+}
+@function vw($size, $viewport: bp()) {
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+//

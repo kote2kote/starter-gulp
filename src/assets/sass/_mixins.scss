@@ -1,0 +1,64 @@
+//== link-colors =======================
+@mixin link-colors($color) {
+  color: $color;
+  text-decoration: none;
+  transition: initial;
+  &:hover {
+    color: lighten($color, 15%);
+    text-decoration: underline;
+  }
+  &:visited {
+    color: desaturate($color, 50%);
+  }
+}
+
+//== responsive =======================
+
+@mixin bp($value: tb) {
+  @if $value == tb {
+    @media only screen and (min-width: bp(tb) + px) {
+      @content;
+    }
+  } @else if $value == pc {
+    @media only screen and (min-width: bp(pc) + px) {
+      @content;
+    }
+  } @else if $value == sm {
+    @media only screen and (min-width: bp(sm) + px) {
+      @content;
+    }
+  } @else if $value == md {
+    @media only screen and (min-width: bp(md) + px) {
+      @content;
+    }
+  } @else if $value == lg {
+    @media only screen and (min-width: bp(lg) + px) {
+      @content;
+    }
+  } @else if $value == xl {
+    @media only screen and (min-width: bp(xl) + px) {
+      @content;
+    }
+  } @else if $value == wide {
+    @media only screen and (min-width: bp(wide) + px) {
+      @content;
+    }
+  } @else if $value == retina {
+    // レティーナ対応モバイル
+    @media (min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2) {
+      @content;
+    }
+  } @else if $value == print {
+    // プリント用
+    @media print {
+      @content;
+    }
+  }
+}
+
+//== ieのみ適用 =======================
+@mixin ie() {
+  @media all and (-ms-high-contrast: none) {
+    @content;
+  }
+}

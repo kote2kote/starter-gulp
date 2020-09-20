@@ -1,0 +1,55 @@
+@import 'variables';
+@import 'mixins';
+@import 'functions';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-size: $v-font-size-default;
+}
+body {
+  font-weight: normal;
+  font-family: $v-color-font-family;
+  color: $v-color-font;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: 'liga', 'kern';
+  text-rendering: optimizeLegibility;
+  background: $v-color-bg no-repeat;
+  word-wrap: break-word;
+  font-size: $v-font-size-default;
+}
+
+a {
+  transition: all 0.3s ease;
+  color: $v-color-a;
+  &:hover {
+    color: $v-color-ahover;
+  }
+}
+
+.cm {
+  box-sizing: border-box;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(245, 245, 245, 0.1),
+    rgba(245, 245, 245, 0.1) 10px,
+    rgba(136, 136, 136, 0.2) 0,
+    rgba(136, 136, 136, 0.2) 20px
+  );
+  border: solid 1px rgba(68, 68, 68, 0.2);
+}
+
+@media all and (-ms-high-contrast: none) {
+  /* IE10 以降にのみ適用される */
+  .ie-block {
+    display: block;
+  }
+  .ie-hidden {
+    display: none;
+  }
+}
